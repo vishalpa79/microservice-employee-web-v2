@@ -86,7 +86,7 @@ public class RestServiceCall {
 	public void deleteEmployeeById(Integer id){
 		 postUrl = env.getProperty("service.url4");
 	        RestTemplate restTemplate = new RestTemplate();
-	        Object usersMap = restTemplate.getForObject("http://localhost:8080/employee/deleteById/"+id, Employee.class);
+	        Object usersMap = restTemplate.getForObject("https://microservice-employee-service.herokuapp.com/employee/deleteById/"+id, Employee.class);
 		
 	}
 	
@@ -96,7 +96,7 @@ public class RestServiceCall {
 		System.out.println("findByDirector is running...");
 		 postUrl = env.getProperty("service.url3");
 		 RestTemplate restTemplate = new RestTemplate();
-		 Employee emp = restTemplate.getForObject("http://localhost:8080/employee/employeeById/"+id, Employee.class);
+		 Employee emp = restTemplate.getForObject("https://microservice-employee-service.herokuapp.com/employee/employeeById/"+id, Employee.class);
 		 return emp;
 	}
 	  private void slowQuery(long seconds){

@@ -52,7 +52,6 @@ public class EmployeeController {
 	public String saveEmployee(Employee employeeBean, Model model) {
 		
 		Employee emp = restfulClient.postEntity(employeeBean);
-		System.out.println("emp username:::::::::::::::::::::::::::::::::::::::::"+emp.getId());
 		model.addAttribute("emp", emp);
 		return "redirect:/employee/"+emp.getId();
 
